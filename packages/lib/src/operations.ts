@@ -35,7 +35,7 @@ export const formatAtprotoOp = (opts: {
       atproto: opts.signingKey,
     },
     rotationKeys: opts.rotationKeys,
-    alsoKnownAs: opts.ethAddress ? [ensureAtprotoPrefix(opts.handle), opts.ethAddress] : [ensureAtprotoPrefix(opts.handle)],
+    alsoKnownAs: opts.ethAddress ? [ensureAtprotoPrefix(opts.handle), 'eip155:8453:' + opts.ethAddress] : [ensureAtprotoPrefix(opts.handle)],
     services: {
       atproto_pds: {
         type: 'AtprotoPersonalDataServer',
