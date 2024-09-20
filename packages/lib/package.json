@@ -1,12 +1,13 @@
 {
-  "name": "@did-plc/lib",
-  "version": "0.0.4",
+  "name": "@creaton-did-plc/lib",
+  "version": "0.0.5",
   "license": "MIT",
-  "description": "DID PLC Typescript Client Library",
+  "description": "DID PLC Typescript Client Library, modified for Creaton",
   "keywords": [
     "did-plc",
     "did",
-    "atproto"
+    "atproto",
+    "cproto"
   ],
   "homepage": "https://web.plc.directory",
   "repository": {

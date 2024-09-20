@@ -83,6 +83,7 @@ export class Client {
   async createDid(opts: {
     signingKey: string
     handle: string
+    ethAddress?: string
     pds: string
     rotationKeys: string[]
     signer: Keypair

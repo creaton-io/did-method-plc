@@ -24,6 +24,7 @@ export const didForCreateOp = async (op: t.CompatibleOp) => {
 export const formatAtprotoOp = (opts: {
   signingKey: string
   handle: string
+  ethAddress?: string
   pds: string
   rotationKeys: string[]
   prev: CID | null
@@ -34,7 +35,7 @@ export const formatAtprotoOp = (opts: {
       atproto: opts.signingKey,
     },
     rotationKeys: opts.rotationKeys,
-    alsoKnownAs: [ensureAtprotoPrefix(opts.handle)],
+    alsoKnownAs: opts.ethAddress ? [ensureAtprotoPrefix(opts.handle), opts.ethAddress] : [ensureAtprotoPrefix(opts.handle)],
     services: {
       atproto_pds: {
         type: 'AtprotoPersonalDataServer',
@@ -48,6 +49,7 @@ export const formatAtprotoOp = (opts: {
 export const atprotoOp = async (opts: {
   signingKey: string
   handle: string
+  ethAddress?: string
   pds: string
   rotationKeys: string[]
   prev: CID | null
@@ -59,6 +61,7 @@ export const atprotoOp = async (opts: {
 export const createOp = async (opts: {
   signingKey: string
   handle: string
+  ethAddress?: string
   pds: string
   rotationKeys: string[]
   signer: Keypair
